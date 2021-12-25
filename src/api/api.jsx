@@ -21,11 +21,8 @@ export class MoackApi {
   static updateItem = async (id,item)=>{
     await mokeApi.put(`shoes/${id}`,item)
   }
+
+  static AddItem = async (item)=>{
+    await mokeApi.post(`shoes/`,item)
+  }
 }
-  // static updateItem(item) {
-  //   const index = DATA.findIndex(x => x.id === item.id);
-  //   if (index === -1) {
-  //     throw new Error("Item not found with id=" + item.id)
-  //   }
-  //   DATA[index] = item;
-  // }

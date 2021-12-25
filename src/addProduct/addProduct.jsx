@@ -1,31 +1,27 @@
-import { Link } from "react-router-dom";
 import React from "react";
 import { MoackApi } from "../api/api";
 
-export class EditProduct extends React.Component {
+export class AddProduct extends React.Component {
   state = {
-    id: +this.props.match.params.id,
-    item: "",
+    id: "",
     title: "",
     price: "",
     img: "",
   };
-  getData = async () => {
-    const item = await MoackApi.getItem(this.state.id);
-    this.setState({
-      item: item.data,
-      title: item.data.title,
-      price: item.data.price,
-      img: item.data.img,
-    });
-    console.log(item);
-    console.log(this.state.id);
+
+  // console.log(data[data.length-1].id);
+
+  setIdByData = async () => {
+    const item = await MoackApi.getProductsData();
+    const id = +item[item.length - 1].id + 1;
+    this.setState({ id });
   };
 
-  componentDidMount() {
-    this.getData();
-  }
 
+
+  componentDidMount() {
+    this.setIdByData();
+  }
   onChangeHandle = (e) => {
     switch (e.target.name) {
       case "title":
@@ -40,16 +36,8 @@ export class EditProduct extends React.Component {
     }
   };
 
-  onSave = async () => {
-    let tempItem = {
-      id: this.state.id,
-      title: this.state.title,
-      price: this.state.price,
-      img: this.state.img,
-    };
-    this.setState({ item: tempItem });
-    console.log(tempItem);
-    await MoackApi.updateItem(this.state.id, tempItem);
+  AddItem = async () => {
+    await MoackApi.AddItem(this.state);
     this.props.history.push("/products");
   };
 
@@ -84,13 +72,13 @@ export class EditProduct extends React.Component {
               value={this.state.img}
             />
           </div>
-            <button
-              onClick={() => this.onSave()}
-              className="ui primary button"
-              type="button"
-            >
-              Save
-            </button>
+          <button
+            onClick={() => this.AddItem()}
+            className="ui primary button"
+            type="button"
+          >
+            Add Item
+          </button>
         </form>
       </div>
     );
