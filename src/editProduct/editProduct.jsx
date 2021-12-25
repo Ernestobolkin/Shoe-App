@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import React from "react";
 import { MoackApi } from "../api/api";
 
@@ -36,6 +35,9 @@ export class EditProduct extends React.Component {
         break;
       case "image":
         this.setState({ img: e.target.value });
+        break;
+      default:
+        console.log("somthing went wrong");
         break;
     }
   };
@@ -84,13 +86,13 @@ export class EditProduct extends React.Component {
               value={this.state.img}
             />
           </div>
-            <button
-              onClick={() => this.onSave()}
-              className="ui primary button"
-              type="button"
-            >
-              Save
-            </button>
+          <button
+            onClick={() => this.onSave()}
+            className="ui primary button"
+            type="button"
+          >
+            Save
+          </button>
         </form>
       </div>
     );

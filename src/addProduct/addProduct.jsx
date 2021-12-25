@@ -9,15 +9,11 @@ export class AddProduct extends React.Component {
     img: "",
   };
 
-  // console.log(data[data.length-1].id);
-
   setIdByData = async () => {
     const item = await MoackApi.getProductsData();
     const id = +item[item.length - 1].id + 1;
     this.setState({ id });
   };
-
-
 
   componentDidMount() {
     this.setIdByData();
@@ -32,6 +28,9 @@ export class AddProduct extends React.Component {
         break;
       case "image":
         this.setState({ img: e.target.value });
+        break;
+      default:
+        console.log("somthing went wrong");
         break;
     }
   };
