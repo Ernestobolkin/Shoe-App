@@ -27,8 +27,8 @@ export class AllTheProducts extends React.Component {
     return this.state.data.map((product) => {
       return (
         <div key={product.id} className="card">
-          <div className="image" href="#">
-            <img src={`${product.img}`} alt="Random"/>
+          <div className="image">
+              <img src={`${product.img}`} alt="random" />
           </div>
           <div className="content">
             <div className="header">

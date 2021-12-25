@@ -1,22 +1,23 @@
-.cardsContainer{
+.cardsContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 
-  .btnContainer{
+  .btnContainer {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 }
-.colordSpan{
+.colordSpan {
   color: #ec252f;
 }
-.containerForCards{
+.containerForCards {
   margin-top: 4rem;
 }
-.myBtnContainer{
+.myBtnContainer {
   display: flex;
   justify-content: center;
 }
+
