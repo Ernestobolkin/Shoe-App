@@ -28,7 +28,7 @@ export class AllTheProducts extends React.Component {
       return (
         <div key={product.id} className="card">
           <div className="image" href="#">
-            <img src={`${product.img}`} />
+            <img src={`${product.img}`} alt="Random"/>
           </div>
           <div className="content">
             <div className="header">
