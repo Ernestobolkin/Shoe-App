@@ -43,6 +43,7 @@ export class EditProduct extends React.Component {
   };
 
   onSave = async () => {
+    // if(this.state.title || this.state.price || this.state.img)
     let tempItem = {
       id: this.state.id,
       title: this.state.title,

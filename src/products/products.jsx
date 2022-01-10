@@ -6,6 +6,7 @@ import "./products.scss";
 export class AllTheProducts extends React.Component {
   state = {
     data: [],
+    
   };
 
   getData = async () => {

@@ -10,6 +10,15 @@ export const NavBar = () => {
       <div className="item">
         <Link to="/products">Products</Link>
       </div>
+      <div class="right menu">
+        <div class="ui right aligned category search item">
+          <div class="ui transparent icon input">
+            <input class="prompt" type="text" placeholder="Search animals..." />
+            <i class="search link icon"></i>
+          </div>
+          <div class="results"></div>
+        </div>
+      </div>
     </div>
   );
 };
